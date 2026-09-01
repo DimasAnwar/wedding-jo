@@ -67,8 +67,8 @@ export const weddingData = {
     }
   ],
   gallery: [
-    "/assets/images/3.jpeg",
     "/assets/images/1.jpeg",
+    "/assets/images/3.jpeg",
     "/assets/images/4.jpeg",
     "/assets/images/8.jpeg",
     "/assets/images/9.jpeg",

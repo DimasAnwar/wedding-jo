@@ -22,16 +22,22 @@ export default function GallerySection({ galleryImages = [], onImageClick }) {
     if (patternIdx === 3) {
       return {
         gridColumn: 'span 2',
-        height: '210px',
+        height: '220px',
         borderRadius: '14px',
         isWide: true
       };
     }
     return {
       gridColumn: 'span 1',
-      height: '225px',
+      height: '230px',
       borderRadius: '14px'
     };
+  };
+
+  const getObjectPosition = (img) => {
+    if (img.includes('3.jpeg')) return 'center 5%';
+    if (img.includes('1.jpeg')) return 'center center';
+    return 'center 15%';
   };
 
   return (
@@ -137,6 +143,7 @@ export default function GallerySection({ galleryImages = [], onImageClick }) {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
+                    objectPosition: getObjectPosition(img, idx),
                     display: 'block',
                     transition: 'transform 0.5s ease'
                   }}
