@@ -1,0 +1,1079 @@
+/* =========================================================
+   FONTS DEFINITIONS
+   ========================================================= */
+@font-face {
+  font-family: 'Ivy Mode';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/IvyMode-Regular.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Ivy Mode';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url('/assets/fonts/IvyMode-Light.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'Ivy Mode';
+  font-style: normal;
+  font-weight: 600;
+  font-display: swap;
+  src: url('/assets/fonts/IvyMode-SemiBold.woff2') format('woff2');
+}
+
+@font-face {
+  font-family: 'amalfi';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/amalfi.woff') format('woff');
+}
+
+@font-face {
+  font-family: 'wedding icon';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url('/assets/fonts/wedding.ttf') format('truetype');
+}
+
+/* =========================================================
+   GLOBAL RESET
+   ========================================================= */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+  overflow-x: hidden;
+  font-family: 'Poppins', sans-serif;
+  scroll-behavior: smooth;
+  background-color: #3b4450;
+}
+
+/* Fix loader and overlays that block page */
+.loader,
+#wccp_pro_mask,
+.wccp_pro_mask {
+  display: none !important;
+  visibility: hidden !important;
+  pointer-events: none !important;
+}
+
+.elementor-invisible {
+  visibility: visible !important;
+}
+
+/* =========================================================
+   BOTANICAL LEAF SWAYING ANIMATIONS (GENTLE & SLOW)
+   ========================================================= */
+@keyframes goyank {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+  50% {
+    transform: rotate(1.2deg) translateY(-2px);
+  }
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+}
+
+@keyframes goyank2 {
+  0% {
+    transform: rotate(0deg) translateY(0);
+  }
+  50% {
+    transform: rotate(-1.2deg) translateY(-2.5px);
+  }
+  100% {
+    transform: rotate(0deg) translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeInDown {
+  0% {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeZoom {
+  0% {
+    opacity: 0;
+    transform: scale(0.94);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes spinDisc {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.goyang {
+  animation: goyank 12s ease-in-out infinite alternate !important;
+  transform-origin: bottom center !important;
+}
+
+.goyang2 {
+  animation: goyank2 14s ease-in-out infinite alternate !important;
+  transform-origin: bottom center !important;
+}
+
+.fade-in {
+  animation: fadeIn 1.2s ease-out forwards;
+}
+
+.fade-in-up {
+  animation: fadeInUp 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+.fade-zoom {
+  animation: fadeZoom 1.2s cubic-bezier(0.22, 1, 0.36, 1) forwards;
+}
+
+/* =========================================================
+   STAGGERED ENTRANCE ANIMATIONS (TRIGGERED ON BUKA UNDANGAN)
+   ========================================================= */
+@keyframes heroBgZoomIn {
+  0% {
+    opacity: 0;
+    transform: scale(1.08);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+@keyframes heroLeafSlideInRight {
+  0% {
+    opacity: 0;
+    transform: translateX(120px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heroLeafSlideInLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-120px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes heroItemFadeUp {
+  0% {
+    opacity: 0;
+    transform: translateY(35px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroAudioPop {
+  0% {
+    opacity: 0;
+    transform: scale(0.3);
+  }
+  70% {
+    transform: scale(1.15);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.hero-animate-in .hero-bg-slideshow {
+  animation: heroBgZoomIn 1.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.hero-animate-in .hero-ornament-right-wrap {
+  animation: heroLeafSlideInRight 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.25s both !important;
+}
+
+.hero-animate-in .hero-ornament-left-wrap {
+  animation: heroLeafSlideInLeft 1.6s cubic-bezier(0.16, 1, 0.3, 1) 0.35s both !important;
+}
+
+.hero-animate-in .floating-audio-top-btn {
+  animation: heroAudioPop 0.9s cubic-bezier(0.34, 1.56, 0.64, 1) 0.5s both;
+}
+
+.hero-animate-in .hero-thewedding {
+  animation: heroItemFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.3s both !important;
+}
+
+.hero-animate-in .hero-names {
+  animation: heroItemFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.5s both !important;
+}
+
+.hero-animate-in .hero-date {
+  animation: heroItemFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.7s both !important;
+}
+
+.hero-animate-in .hero-save-the-date {
+  animation: heroItemFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 0.9s both !important;
+}
+
+.hero-animate-in .countdown-container {
+  animation: heroItemFadeUp 1.2s cubic-bezier(0.16, 1, 0.3, 1) 1.1s both !important;
+}
+
+.hero-animate-in .countdown-box:nth-child(1) {
+  animation: heroItemFadeUp 1.0s cubic-bezier(0.16, 1, 0.3, 1) 1.15s both !important;
+}
+
+.hero-animate-in .countdown-box:nth-child(2) {
+  animation: heroItemFadeUp 1.0s cubic-bezier(0.16, 1, 0.3, 1) 1.25s both !important;
+}
+
+.hero-animate-in .countdown-box:nth-child(3) {
+  animation: heroItemFadeUp 1.0s cubic-bezier(0.16, 1, 0.3, 1) 1.35s both !important;
+}
+
+.hero-animate-in .countdown-box:nth-child(4) {
+  animation: heroItemFadeUp 1.0s cubic-bezier(0.16, 1, 0.3, 1) 1.45s both !important;
+}
+
+/* =========================================================
+   SCROLL REVEAL / FADE IN ON SCROLL
+   ========================================================= */
+.reveal-on-scroll {
+  opacity: 0;
+  transform: translateY(35px);
+  transition: opacity 0.9s cubic-bezier(0.16, 1, 0.3, 1), transform 0.9s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.reveal-zoom {
+  transform: scale(0.92) translateY(20px);
+}
+
+.reveal-on-scroll.is-visible {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.reveal-delay-1 {
+  transition-delay: 0.15s;
+}
+
+.reveal-delay-2 {
+  transition-delay: 0.3s;
+}
+
+.reveal-delay-3 {
+  transition-delay: 0.45s;
+}
+
+/* =========================================================
+   FLOWER ORNAMENTS SCROLL REVEAL (LEFT TO RIGHT & RIGHT TO LEFT)
+   ========================================================= */
+.flower-reveal-left {
+  opacity: 0 !important;
+  transform: translateX(-75px) !important;
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: opacity, transform;
+}
+
+.flower-reveal-right {
+  opacity: 0 !important;
+  transform: translateX(75px) !important;
+  transition: opacity 1.2s cubic-bezier(0.16, 1, 0.3, 1), transform 1.2s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible .flower-reveal-left,
+.reveal-on-scroll.is-visible .flower-reveal-right,
+.is-visible .flower-reveal-left,
+.is-visible .flower-reveal-right {
+  opacity: 1 !important;
+  transform: translateX(0) !important;
+}
+
+.flower-delay-1 {
+  transition-delay: 0.1s !important;
+}
+
+.flower-delay-2 {
+  transition-delay: 0.25s !important;
+}
+
+.flower-delay-3 {
+  transition-delay: 0.4s !important;
+}
+
+/* =========================================================
+   GALLERY ITEMS STAGGERED REVEAL ANIMATIONS
+   ========================================================= */
+.reveal-on-scroll .e-gallery-item {
+  opacity: 0 !important;
+  transform: translateY(35px) scale(0.92) !important;
+  transition: opacity 0.85s cubic-bezier(0.16, 1, 0.3, 1), transform 0.85s cubic-bezier(0.16, 1, 0.3, 1) !important;
+  will-change: opacity, transform;
+}
+
+.reveal-on-scroll.is-visible .e-gallery-item {
+  opacity: 1 !important;
+  transform: translateY(0) scale(1) !important;
+}
+
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(1) { transition-delay: 0.08s !important; }
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(2) { transition-delay: 0.16s !important; }
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(3) { transition-delay: 0.24s !important; }
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(4) { transition-delay: 0.32s !important; }
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(5) { transition-delay: 0.40s !important; }
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(6) { transition-delay: 0.48s !important; }
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(7) { transition-delay: 0.56s !important; }
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(8) { transition-delay: 0.64s !important; }
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(9) { transition-delay: 0.72s !important; }
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(10) { transition-delay: 0.80s !important; }
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(n+11) { transition-delay: 0.88s !important; }
+
+/* =========================================================
+   COVER ENVELOPE CARD (EXACT SCREENSHOT 1)
+   ========================================================= */
+.cover-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 99999;
+  background: linear-gradient(180deg, #4E5E71 0%, #3B4450 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  overflow-y: auto;
+}
+
+@keyframes fadeInCard {
+  0% {
+    opacity: 0;
+    transform: translateY(25px) scale(0.96);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+@keyframes fadeInUp {
+  0% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes pulseButton {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  50% {
+    transform: scale(1.06);
+    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.35);
+  }
+
+  100% {
+    transform: scale(1);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+}
+
+.cover-card {
+  width: 90%;
+  max-width: 340px;
+  background-color: #D4D4D2;
+  border: 5px double #8D8780;
+  border-radius: 300px 300px 20px 20px;
+  box-shadow: 20px 20px 10px rgba(0, 0, 0, 0.25);
+  padding: 5px 5px 38px 5px;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin: auto;
+  overflow: hidden;
+  animation: fadeInCard 0.9s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.cover-card-img {
+  width: 100%;
+  height: 340px;
+  max-height: 340px;
+  object-fit: cover;
+  object-position: center 15%;
+  border-radius: 290px 290px 0 0;
+  display: block;
+}
+
+.cover-title-thewedding {
+  color: #6B6B6B;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 18px 0 5px 0;
+  animation: fadeInUp 0.8s 0.2s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.cover-title-names {
+  color: #5D645A;
+  font-family: 'Ivy Mode', serif;
+  font-size: 30px;
+  font-weight: 400;
+  margin: 0 0 42px 0;
+  animation: fadeInUp 0.8s 0.35s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.cover-to-text {
+  color: #4D4D4D;
+  font-family: 'Poppins', sans-serif;
+  font-size: 12px;
+  font-weight: 400;
+  line-height: 1.4;
+  margin: 0 0 4px 0;
+  animation: fadeInUp 0.8s 0.5s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.cover-guest-name {
+  color: #474747;
+  font-family: 'Poppins', sans-serif;
+  font-size: 21px;
+  font-weight: 400;
+  margin: 0 0 18px 0;
+  animation: fadeInUp 0.8s 0.65s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+.cover-btn-open {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  color: #FFFFFF;
+  background-image: linear-gradient(180deg, #58697c 0%, #3e4b59 100%);
+  padding: 9px 26px;
+  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  animation: fadeInUp 0.8s 0.8s cubic-bezier(0.16, 1, 0.3, 1) both, pulseButton 2s 1.6s ease-in-out infinite;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.cover-btn-open:hover {
+  background-image: linear-gradient(180deg, #677b91 0%, #4c5a6b 100%);
+}
+
+/* =========================================================
+   HERO / MAIN COVER SECTION (EXACT SCREENSHOT 2)
+   ========================================================= */
+.hero-section {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+  background-color: #D4D4D2;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: center;
+  padding: 40px 20px 75px 20px;
+  overflow: hidden;
+}
+
+.floating-audio-top-btn {
+  position: fixed !important;
+  top: 20px !important;
+  right: 20px !important;
+  z-index: 99999 !important;
+  width: 38px !important;
+  height: 38px !important;
+  min-width: 38px !important;
+  min-height: 38px !important;
+  max-width: 38px !important;
+  max-height: 38px !important;
+  border-radius: 50% !important;
+  background: rgba(255, 255, 255, 0.92) !important;
+  backdrop-filter: blur(8px) !important;
+  -webkit-backdrop-filter: blur(8px) !important;
+  border: 1.5px solid #8D8780 !important;
+  box-shadow: 0 4px 14px rgba(0, 0, 0, 0.2) !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  cursor: pointer !important;
+  transition: transform 0.25s ease, box-shadow 0.25s ease !important;
+}
+
+.floating-audio-top-btn:hover {
+  transform: scale(1.1) !important;
+  box-shadow: 0 6px 18px rgba(0, 0, 0, 0.3) !important;
+}
+
+.music-disc-spin {
+  animation: spinDisc 3s linear infinite;
+  color: #5D645A;
+  font-size: 18px;
+  display: block;
+}
+
+.music-play-icon {
+  color: #5D645A;
+  font-size: 13px;
+  margin-left: 2px;
+  display: block;
+}
+
+.hero-bg-slideshow {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 65vh;
+  background-size: cover;
+  background-position: center top;
+  transition: background-image 1.2s ease-in-out;
+  mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  -webkit-mask-image: linear-gradient(to bottom, rgba(0, 0, 0, 1) 50%, rgba(0, 0, 0, 0) 100%);
+  z-index: 1;
+}
+
+.hero-content {
+  position: relative;
+  z-index: 5;
+  width: 100%;
+  max-width: 440px;
+  margin-top: auto;
+  padding-bottom: 25px;
+}
+
+.hero-thewedding {
+  color: #6B6B6B;
+  font-family: 'Roboto', sans-serif;
+  font-size: 13px;
+  font-weight: 300;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  margin: 0 0 6px 0;
+}
+
+.hero-names {
+  color: #5D645A;
+  font-family: 'Ivy Mode', serif;
+  font-size: 38px;
+  font-weight: 400;
+  margin: 0 0 8px 0;
+}
+
+.hero-date {
+  color: #4D4D4D;
+  font-family: 'Poppins', sans-serif;
+  font-size: 15px;
+  font-weight: 400;
+  margin: 0 0 35px 0;
+}
+
+.hero-save-the-date {
+  color: #424242;
+  font-family: 'Roboto', sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  margin: 0 0 16px 0;
+  font-weight: 300;
+}
+
+.countdown-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  max-width: 320px;
+  margin: 0 auto;
+}
+
+.countdown-boxes {
+  display: flex;
+  gap: 8px;
+  width: 100%;
+  justify-content: center;
+}
+
+.countdown-box {
+  flex: 1;
+  background-color: transparent;
+  border-top: 1px solid #424242;
+  border-bottom: 1px solid #424242;
+  border-left: none;
+  border-right: none;
+  border-radius: 6px;
+  padding: 3px 2px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+}
+
+.countdown-box-digits {
+  color: #424242;
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  font-weight: 400;
+  display: block;
+  text-align: center;
+  width: 100%;
+  line-height: 1.1;
+  margin: 0 auto;
+}
+
+.countdown-box-label {
+  color: #424242;
+  font-family: 'Poppins', sans-serif;
+  font-size: 9.5px;
+  font-weight: 400;
+  display: block;
+  text-align: center;
+  width: 100%;
+  text-transform: capitalize;
+  margin: 1px auto 0 auto;
+}
+
+/* Pause Button Next to Countdown */
+.countdown-audio-btn {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background-color: #fff;
+  border: 1px solid #ddd;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: #333;
+  font-size: 13px;
+}
+
+/* =========================================================
+   BOTTOM FLOATING NAVBAR (ORIGINAL NOBUKA)
+   ========================================================= */
+.elementor-element-79a161fb {
+  position: fixed !important;
+  bottom: 0 !important;
+  left: 50% !important;
+  transform: translateX(-50%) !important;
+  width: 100% !important;
+  max-width: 500px !important;
+  z-index: 9999 !important;
+  background-image: linear-gradient(180deg, #8794a6 0%, #536579 100%) !important;
+  border-radius: 15px 15px 0px 0px !important;
+  box-shadow: 0px 0px 25px 0px rgba(0, 0, 0, 0.25) !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  overflow: hidden !important;
+}
+
+.elementor-element-79a161fb .e-con-inner {
+  display: flex !important;
+  flex-direction: row !important;
+  width: 100% !important;
+  padding: 0 !important;
+  margin: 0 !important;
+}
+
+.elementor-element-79a161fb a.e-con-child {
+  flex: 1 1 20% !important;
+  width: 20% !important;
+  display: flex !important;
+  flex-direction: column !important;
+  align-items: center !important;
+  justify-content: center !important;
+  padding: 6px 0 !important;
+  text-decoration: none !important;
+  border-right: 1.5px solid rgba(255, 255, 255, 0.3) !important;
+  transition: background-color 0.2s ease !important;
+}
+
+.elementor-element-79a161fb a.e-con-child:last-child {
+  border-right: none !important;
+}
+
+.elementor-element-79a161fb a.e-con-child:hover,
+.elementor-element-79a161fb a.e-con-child:active {
+  background-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+.elementor-element-6a6d94ab .elementor-heading-title,
+.elementor-element-29940d8 .elementor-heading-title,
+.elementor-element-d2f038f .elementor-heading-title,
+.elementor-element-5388b3b4 .elementor-heading-title,
+.elementor-element-60f854e5 .elementor-heading-title {
+  font-family: "wedding icon", Sans-serif !important;
+  font-size: 24px !important;
+  line-height: 1 !important;
+  color: #ffffff !important;
+  margin: 0 0 2px 0 !important;
+  text-align: center !important;
+}
+
+.elementor-element-c8bd017 .elementor-heading-title,
+.elementor-element-70db736c .elementor-heading-title,
+.elementor-element-1ea89f23 .elementor-heading-title,
+.elementor-element-314dd1d .elementor-heading-title,
+.elementor-element-5a9c56b0 .elementor-heading-title {
+  font-family: "Poppins", Sans-serif !important;
+  font-size: 11px !important;
+  font-weight: 400 !important;
+  line-height: 1 !important;
+  color: #ffffff !important;
+  margin: 0 !important;
+  text-align: center !important;
+}
+
+/* =========================================================
+   COUPLE PROFILE PHOTO DOUBLE-LINE ARCH FRAME (GROOM & BRIDE)
+   ========================================================= */
+.wadahprofil {
+  padding: 20px 10px !important;
+  width: 100% !important;
+  text-align: center !important;
+}
+
+.profilcatin {
+  width: 100% !important;
+  margin: 0 auto 30px auto !important;
+  text-align: center !important;
+}
+
+.profilcatin .elementor-widget-image {
+  margin: 0 auto 18px auto !important;
+  display: flex !important;
+  justify-content: center !important;
+  align-items: center !important;
+}
+
+.profilcatin .elementor-widget-image .elementor-widget-container {
+  display: inline-block !important;
+  position: relative !important;
+  padding: 5px !important;
+  border: 5px double #7C8D9E !important;
+  border-radius: 170px 170px 0 0 !important;
+  background: transparent !important;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08) !important;
+}
+
+.profilcatin .elementor-widget-image img {
+  width: 220px !important;
+  max-width: 220px !important;
+  height: 310px !important;
+  object-fit: cover !important;
+  object-position: center top !important;
+  border-radius: 160px 160px 0 0 !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+/* Couple section typography (Exact Original Nobuka Template) */
+.elementor-element-3389642b .elementor-heading-title,
+.elementor-element-4d833160 .elementor-heading-title {
+  font-family: 'amalfi', cursive, sans-serif !important;
+  font-size: 22px !important;
+  color: #8794a6 !important;
+  font-weight: 400 !important;
+  line-height: 1.4 !important;
+  margin: 10px 0 14px 0 !important;
+}
+
+.elementor-element-73022005 .elementor-heading-title,
+.elementor-element-476251b6 .elementor-heading-title,
+.elementor-element-57d068f2 .elementor-heading-title {
+  font-family: 'Ivy Mode', serif !important;
+  font-size: 24px !important;
+  font-weight: 400 !important;
+  color: #5D645A !important;
+  letter-spacing: 0.5px !important;
+  margin: 0 0 6px 0 !important;
+}
+
+.elementor-element-5cd77cc8 .elementor-heading-title,
+.elementor-element-3158c531 .elementor-heading-title,
+.elementor-element-3dac8546 .elementor-heading-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13.5px !important;
+  color: #5F5F5F !important;
+  font-weight: 600 !important;
+  margin: 0 0 6px 0 !important;
+}
+
+.elementor-element-827865d .elementor-heading-title,
+.elementor-element-451e0ca6 .elementor-heading-title,
+.elementor-element-34bcce6 .elementor-heading-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 12.5px !important;
+  line-height: 1.6 !important;
+  color: #5F5F5F !important;
+  font-weight: 400 !important;
+  max-width: 320px !important;
+  margin: 0 auto !important;
+}
+
+/* Divider AND between couple */
+.elementor-element-a3d36e7 .elementor-divider__text {
+  font-family: 'Ivy Mode', serif !important;
+  font-size: 16px !important;
+  font-weight: 400 !important;
+  letter-spacing: 3px !important;
+  color: #5D645A !important;
+  padding: 0 14px !important;
+}
+
+/* =========================================================
+   EVENT / LOKASI CARDS (AKAD & RESEPSI)
+   ========================================================= */
+#lokasi {
+  position: relative !important;
+  overflow: hidden !important;
+  background-image: linear-gradient(120deg, #4E5E71 0%, #3B4450 100%) !important;
+  padding: 50px 20px 30px 20px !important;
+}
+
+/* "Wedding" with line spanning to the right */
+.elementor-element-2a9b96d {
+  width: 100% !important;
+  max-width: 400px !important;
+  margin: 0 auto 0 auto !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.elementor-element-2a9b96d .elementor-divider {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.elementor-element-2a9b96d .elementor-divider-separator {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+}
+
+.elementor-element-2a9b96d .elementor-divider-separator::after {
+  content: '' !important;
+  flex-grow: 1 !important;
+  height: 1px !important;
+  background-color: rgba(255, 255, 255, 0.75) !important;
+  margin-left: 14px !important;
+}
+
+.elementor-element-2a9b96d .elementor-divider__text {
+  font-family: 'Ivy Mode', serif !important;
+  font-size: 38px !important;
+  font-weight: 400 !important;
+  color: #FFFFFF !important;
+  padding: 0 !important;
+  line-height: 1.1 !important;
+  white-space: nowrap !important;
+}
+
+/* "Event" Calligraphy Underneath (Cleanly below Wedding, no clash) */
+.elementor-element-61669d75 {
+  width: 100% !important;
+  max-width: 400px !important;
+  margin: 0 auto 24px auto !important;
+  text-align: left !important;
+  position: relative !important;
+  z-index: 2 !important;
+}
+
+.elementor-element-61669d75 .elementor-heading-title {
+  font-family: 'amalfi', cursive !important;
+  font-size: 24px !important;
+  color: #FFFFFF !important;
+  font-weight: 300 !important;
+  margin: 8px 0 0 4px !important;
+  text-align: left !important;
+  line-height: 1.1 !important;
+}
+
+/* Akad & Resepsi Card Containers */
+.elementor-element-3f35eec3,
+.elementor-element-3aeba5c3,
+.elementor-element-45d290b {
+  position: relative !important;
+  z-index: 2 !important;
+  background-color: #FCFCFC !important;
+  background-image: radial-gradient(at center center, #FFFFFF 0%, #F3F3F3 100%) !important;
+  border-radius: 12px !important;
+  box-shadow: 0px 8px 22px rgba(0, 0, 0, 0.18) !important;
+  padding: 22px 18px 20px 18px !important;
+  margin: 0 auto 22px auto !important;
+  max-width: 400px !important;
+  width: 100% !important;
+  text-align: center !important;
+  border: 1px solid rgba(255, 255, 255, 0.6) !important;
+}
+
+.elementor-element-3aeba5c3 {
+  margin: 0 auto 10px auto !important;
+}
+
+.elementor-element-2d3bbc5f .elementor-heading-title,
+.elementor-element-4c465330 .elementor-heading-title,
+.elementor-element-8650bb4 .elementor-heading-title {
+  font-family: 'Ivy Mode', serif !important;
+  font-size: 28px !important;
+  color: #5D645A !important;
+  font-weight: 400 !important;
+  margin: 0 0 2px 0 !important;
+}
+
+.elementor-element-722a254a,
+.elementor-element-701f5e96 {
+  margin: 0 auto 4px auto !important;
+  max-width: 260px !important;
+  width: 65% !important;
+}
+
+.elementor-element-722a254a img,
+.elementor-element-701f5e96 img {
+  width: 100% !important;
+  height: auto !important;
+  display: block !important;
+  margin: 0 auto !important;
+}
+
+.elementor-element-cd0cc51 .elementor-heading-title,
+.elementor-element-2c8a6d74 .elementor-heading-title,
+.elementor-element-1f6c4ff .elementor-heading-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13.5px !important;
+  font-weight: 600 !important;
+  text-transform: uppercase !important;
+  letter-spacing: 1px !important;
+  color: #424242 !important;
+  margin: 4px 0 6px 0 !important;
+}
+
+.elementor-element-184b45 .elementor-heading-title,
+.elementor-element-52b59b0c .elementor-heading-title,
+.elementor-element-69165ea4 .elementor-heading-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 12.5px !important;
+  font-weight: 400 !important;
+  letter-spacing: 0.5px !important;
+  color: #696969 !important;
+  margin: 0 0 8px 0 !important;
+}
+
+.elementor-element-201c519 .elementor-heading-title,
+.elementor-element-1cc6d12f .elementor-heading-title,
+.elementor-element-101f37e .elementor-heading-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 13px !important;
+  font-weight: 600 !important;
+  color: #555555 !important;
+  margin: 0 0 3px 0 !important;
+}
+
+.elementor-element-7a34f8b9 .elementor-heading-title,
+.elementor-element-6c468e1b .elementor-heading-title,
+.elementor-element-f00e0fe .elementor-heading-title {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 400 !important;
+  line-height: 1.45 !important;
+  color: #555555 !important;
+  max-width: 300px !important;
+  margin: 0 auto 15px auto !important;
+}
+
+.elementor-element-33656db8 a.elementor-button,
+.elementor-element-4ee40618 a.elementor-button,
+.elementor-element-401d8bc5 a.elementor-button {
+  font-family: 'Poppins', sans-serif !important;
+  font-size: 12px !important;
+  font-weight: 500 !important;
+  color: #5D645A !important;
+  background-color: #FFFFFF !important;
+  border: 1px solid #A2A7AA !important;
+  border-radius: 4px !important;
+  padding: 6px 18px !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  gap: 6px !important;
+  text-decoration: none !important;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.08) !important;
+  transition: all 0.25s ease !important;
+}
+
+.elementor-element-33656db8 a.elementor-button:hover,
+.elementor-element-4ee40618 a.elementor-button:hover,
+.elementor-element-401d8bc5 a.elementor-button:hover {
+  background-color: #5D645A !important;
+  color: #FFFFFF !important;
+  border-color: #5D645A !important;
+  transform: translateY(-1px) !important;
+}
