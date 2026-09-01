@@ -38,7 +38,8 @@ export const weddingData = {
     "/assets/images/3.jpeg",
     "/assets/images/1.jpeg",
     "/assets/images/4.jpeg",
-    "/assets/images/5.jpeg"
+    "/assets/images/8.jpeg",
+    "/assets/images/9.jpeg"
   ],
   quote: {
     verse: "Dan di antara tanda-tanda (kebesaran)-Nya ialah Dia menciptakan pasangan-pasangan untukmu dari jenismu sendiri, agar kamu cenderung dan merasa tenteram kepadanya, dan Dia menjadikan di antaramu rasa kasih dan sayang.",
@@ -66,11 +67,9 @@ export const weddingData = {
     }
   ],
   gallery: [
-    "/assets/images/1.jpeg",
-    "/assets/images/2.jpeg",
     "/assets/images/3.jpeg",
+    "/assets/images/1.jpeg",
     "/assets/images/4.jpeg",
-    "/assets/images/5.jpeg",
     "/assets/images/8.jpeg",
     "/assets/images/9.jpeg",
     "/assets/images/10.jpeg",

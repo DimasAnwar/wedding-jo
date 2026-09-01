@@ -3,13 +3,13 @@ import React, { useState } from 'react';
 export default function GallerySection({ galleryImages = [], onImageClick }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
-  // Show 7 initial curated photos or all photos
-  const displayedImages = isExpanded ? galleryImages : galleryImages.slice(0, 7);
+  // Show 6 initial curated photos (4 balanced rows) or all photos
+  const displayedImages = isExpanded ? galleryImages : galleryImages.slice(0, 6);
 
   // Helper to determine editorial masonry grid styling
   const getItemStyle = (idx) => {
-    // Pattern: 0: Full Hero, 1&2: Pair, 3: Wide, 4&5: Pair, 6: Full Arched Hero, etc.
-    const patternIdx = idx % 7;
+    // Rhythm: 0: Hero (span 2), 1&2: Pair (span 1), 3: Wide (span 2), 4&5: Pair (span 1)
+    const patternIdx = idx % 6;
 
     if (patternIdx === 0) {
       return {
@@ -25,14 +25,6 @@ export default function GallerySection({ galleryImages = [], onImageClick }) {
         height: '210px',
         borderRadius: '14px',
         isWide: true
-      };
-    }
-    if (patternIdx === 6) {
-      return {
-        gridColumn: 'span 2',
-        height: '300px',
-        borderRadius: '16px',
-        isHero: true
       };
     }
     return {
@@ -213,7 +205,7 @@ export default function GallerySection({ galleryImages = [], onImageClick }) {
         </div>
 
         {/* Expand / Collapse Button */}
-        {galleryImages.length > 7 && (
+        {galleryImages.length > 6 && (
           <div style={{ textAlign: 'center', marginTop: '18px' }}>
             <button
               type="button"
