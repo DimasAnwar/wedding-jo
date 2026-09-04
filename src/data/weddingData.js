@@ -90,7 +90,7 @@ export const weddingData = {
       },
       {
         date: "Pendekatan 2026",
-        text: "Singkat cerita setelah kami berinteraksi d instagram, kami saling bertukar nomor kontak dan berkumunikasi secara intens di whatsapp."
+        text: "Singkat cerita setelah kami berinteraksi di instagram, kami saling bertukar nomor kontak dan berkomunikasi secara intens di whatsapp."
       },
       {
         date: "Pernyataan Cinta 2026",
