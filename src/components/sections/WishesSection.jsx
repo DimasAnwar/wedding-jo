@@ -29,7 +29,7 @@ export default function WishesSection({ wishes = [], onAddWish }) {
           <div className="elementor-widget-container">
             <div className="elementor-divider">
               <span className="elementor-divider-separator">
-                <span className="elementor-divider__text elementor-divider__element"> Friend Wish </span>
+
               </span>
             </div>
           </div>
