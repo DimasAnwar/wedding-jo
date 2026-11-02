@@ -1,7 +1,10 @@
 import React, { useState } from 'react';
 
 // Posisi foto sama seperti versi awal, kecuali foto paling akhir => center bottom.
+// 12.jpeg dikasih posisi khusus supaya bagian bawahnya tidak terpotong.
 const getObjectPosition = (img, isLast) => {
+  if (img && img.includes('12.jpeg')) return 'center 60%'; // tune: 70% / 80% / bottom kalau masih kepotong
+
   if (isLast) return 'center bottom';
 
   if (img && img.includes('9.jpeg')) return 'center 85%';
@@ -20,7 +23,7 @@ export default function GallerySection({ galleryImages = [], onImageClick }) {
   const displayedImages = isExpanded ? safeImages : safeImages.slice(0, 6);
 
   // Helper to determine editorial masonry grid styling
-  const getItemStyle = (idx) => {
+  const getItemStyle = (idx, img) => {
     // Rhythm: 0: Hero (span 2), 1&2: Pair (span 1), 3: Wide (span 2), 4&5: Pair (span 1)
     const patternIdx = idx % 6;
 
@@ -35,7 +38,8 @@ export default function GallerySection({ galleryImages = [], onImageClick }) {
     if (patternIdx === 3) {
       return {
         gridColumn: 'span 2',
-        height: '220px',
+        // 12.jpeg dibuat lebih tinggi supaya tidak terpotong ke bawah
+        height: img && img.includes('12.jpeg') ? '340px' : '220px',
         borderRadius: '14px',
         isWide: true
       };
@@ -109,7 +113,7 @@ export default function GallerySection({ galleryImages = [], onImageClick }) {
           }}
         >
           {displayedImages.map((img, idx) => {
-            const itemStyle = getItemStyle(idx);
+            const itemStyle = getItemStyle(idx, img);
 
             return (
               <div
