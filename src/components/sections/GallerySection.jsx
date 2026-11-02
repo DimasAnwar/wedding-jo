@@ -1,10 +1,23 @@
 import React, { useState } from 'react';
 
+// Posisi foto sama seperti versi awal, kecuali foto paling akhir => center bottom.
+const getObjectPosition = (img, isLast) => {
+  if (isLast) return 'center bottom';
+
+  if (img && img.includes('9.jpeg')) return 'center 85%';
+  if (img && img.includes('3.jpeg')) return 'center 5%';
+  if (img && img.includes('1.jpeg')) return 'center center';
+  return 'center 15%';
+};
+
 export default function GallerySection({ galleryImages = [], onImageClick }) {
   const [isExpanded, setIsExpanded] = useState(false);
 
+  // Safely ensure galleryImages is an array
+  const safeImages = Array.isArray(galleryImages) ? galleryImages : [];
+
   // Show 6 initial curated photos (4 balanced rows) or all photos
-  const displayedImages = isExpanded ? galleryImages : galleryImages.slice(0, 6);
+  const displayedImages = isExpanded ? safeImages : safeImages.slice(0, 6);
 
   // Helper to determine editorial masonry grid styling
   const getItemStyle = (idx) => {
@@ -32,12 +45,6 @@ export default function GallerySection({ galleryImages = [], onImageClick }) {
       height: '230px',
       borderRadius: '14px'
     };
-  };
-
-  const getObjectPosition = (img) => {
-    if (img.includes('3.jpeg')) return 'center 5%';
-    if (img.includes('1.jpeg')) return 'center center';
-    return 'center 15%';
   };
 
   return (
@@ -120,7 +127,7 @@ export default function GallerySection({ galleryImages = [], onImageClick }) {
                   backgroundColor: '#E8E8E6',
                   transition: 'transform 0.35s ease, box-shadow 0.35s ease'
                 }}
-                onClick={() => onImageClick(img, idx)}
+                onClick={() => onImageClick && onImageClick(img, idx)}
                 onMouseEnter={(e) => {
                   e.currentTarget.style.transform = 'scale(1.025)';
                   e.currentTarget.style.boxShadow = '0 12px 30px rgba(0, 0, 0, 0.18)';
@@ -143,7 +150,7 @@ export default function GallerySection({ galleryImages = [], onImageClick }) {
                     width: '100%',
                     height: '100%',
                     objectFit: 'cover',
-                    objectPosition: getObjectPosition(img, idx),
+                    objectPosition: getObjectPosition(img, idx === displayedImages.length - 1),
                     display: 'block',
                     transition: 'transform 0.5s ease'
                   }}
@@ -212,7 +219,7 @@ export default function GallerySection({ galleryImages = [], onImageClick }) {
         </div>
 
         {/* Expand / Collapse Button */}
-        {galleryImages.length > 6 && (
+        {safeImages.length > 6 && (
           <div style={{ textAlign: 'center', marginTop: '18px' }}>
             <button
               type="button"
@@ -223,7 +230,7 @@ export default function GallerySection({ galleryImages = [], onImageClick }) {
                 fontWeight: 500,
                 color: '#4E5E71',
                 backgroundColor: '#ffffff',
-                border: '1px solid #7C8D9E',
+                border: '1.5px solid #7C8D9E',
                 borderRadius: '30px',
                 padding: '9px 24px',
                 display: 'inline-flex',
@@ -243,7 +250,7 @@ export default function GallerySection({ galleryImages = [], onImageClick }) {
               }}
             >
               <i className={`fas fa-${isExpanded ? 'chevron-up' : 'th'}`} style={{ fontSize: '12px' }}></i>
-              <span>{isExpanded ? 'Tampilkan Lebih Sedikit' : `Lihat Semua Foto (${galleryImages.length})`}</span>
+              <span>{isExpanded ? 'Tampilkan Lebih Sedikit' : `Lihat Semua Foto (${safeImages.length})`}</span>
             </button>
           </div>
         )}

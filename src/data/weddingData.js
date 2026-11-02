@@ -68,17 +68,12 @@ export const weddingData = {
   ],
   gallery: [
     "/assets/images/1.jpeg",
-    "/assets/images/3.jpeg",
     "/assets/images/4.jpeg",
     "/assets/images/8.jpeg",
-    "/assets/images/9.jpeg",
-    "/assets/images/10.jpeg",
     "/assets/images/11.jpeg",
     "/assets/images/12.jpeg",
     "/assets/images/13.jpeg",
-    "/assets/images/14.jpeg",
-    "/assets/images/15.jpeg",
-    "/assets/images/16.jpeg"
+    "/assets/images/14.jpeg"
   ],
   stories: {
     photo: "/assets/images/4.jpeg",

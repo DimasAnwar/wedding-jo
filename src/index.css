@@ -78,9 +78,11 @@ body {
   0% {
     transform: rotate(0deg) translateY(0);
   }
+
   50% {
     transform: rotate(1.2deg) translateY(-2px);
   }
+
   100% {
     transform: rotate(0deg) translateY(0);
   }
@@ -90,9 +92,11 @@ body {
   0% {
     transform: rotate(0deg) translateY(0);
   }
+
   50% {
     transform: rotate(-1.2deg) translateY(-2.5px);
   }
+
   100% {
     transform: rotate(0deg) translateY(0);
   }
@@ -102,6 +106,7 @@ body {
   0% {
     opacity: 0;
   }
+
   100% {
     opacity: 1;
   }
@@ -112,6 +117,7 @@ body {
     opacity: 0;
     transform: translateY(20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -123,6 +129,7 @@ body {
     opacity: 0;
     transform: translateY(-20px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -134,6 +141,7 @@ body {
     opacity: 0;
     transform: scale(0.94);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -144,6 +152,7 @@ body {
   from {
     transform: rotate(0deg);
   }
+
   to {
     transform: rotate(360deg);
   }
@@ -179,6 +188,7 @@ body {
     opacity: 0;
     transform: scale(1.08);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -190,6 +200,7 @@ body {
     opacity: 0;
     transform: translateX(120px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -201,6 +212,7 @@ body {
     opacity: 0;
     transform: translateX(-120px);
   }
+
   100% {
     opacity: 1;
     transform: translateX(0);
@@ -212,6 +224,7 @@ body {
     opacity: 0;
     transform: translateY(35px);
   }
+
   100% {
     opacity: 1;
     transform: translateY(0);
@@ -223,9 +236,11 @@ body {
     opacity: 0;
     transform: scale(0.3);
   }
+
   70% {
     transform: scale(1.15);
   }
+
   100% {
     opacity: 1;
     transform: scale(1);
@@ -367,17 +382,49 @@ body {
   transform: translateY(0) scale(1) !important;
 }
 
-.reveal-on-scroll.is-visible .e-gallery-item:nth-child(1) { transition-delay: 0.08s !important; }
-.reveal-on-scroll.is-visible .e-gallery-item:nth-child(2) { transition-delay: 0.16s !important; }
-.reveal-on-scroll.is-visible .e-gallery-item:nth-child(3) { transition-delay: 0.24s !important; }
-.reveal-on-scroll.is-visible .e-gallery-item:nth-child(4) { transition-delay: 0.32s !important; }
-.reveal-on-scroll.is-visible .e-gallery-item:nth-child(5) { transition-delay: 0.40s !important; }
-.reveal-on-scroll.is-visible .e-gallery-item:nth-child(6) { transition-delay: 0.48s !important; }
-.reveal-on-scroll.is-visible .e-gallery-item:nth-child(7) { transition-delay: 0.56s !important; }
-.reveal-on-scroll.is-visible .e-gallery-item:nth-child(8) { transition-delay: 0.64s !important; }
-.reveal-on-scroll.is-visible .e-gallery-item:nth-child(9) { transition-delay: 0.72s !important; }
-.reveal-on-scroll.is-visible .e-gallery-item:nth-child(10) { transition-delay: 0.80s !important; }
-.reveal-on-scroll.is-visible .e-gallery-item:nth-child(n+11) { transition-delay: 0.88s !important; }
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(1) {
+  transition-delay: 0.08s !important;
+}
+
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(2) {
+  transition-delay: 0.16s !important;
+}
+
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(3) {
+  transition-delay: 0.24s !important;
+}
+
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(4) {
+  transition-delay: 0.32s !important;
+}
+
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(5) {
+  transition-delay: 0.40s !important;
+}
+
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(6) {
+  transition-delay: 0.48s !important;
+}
+
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(7) {
+  transition-delay: 0.56s !important;
+}
+
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(8) {
+  transition-delay: 0.64s !important;
+}
+
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(9) {
+  transition-delay: 0.72s !important;
+}
+
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(10) {
+  transition-delay: 0.80s !important;
+}
+
+.reveal-on-scroll.is-visible .e-gallery-item:nth-child(n+11) {
+  transition-delay: 0.88s !important;
+}
 
 /* =========================================================
    COVER ENVELOPE CARD (EXACT SCREENSHOT 1)
